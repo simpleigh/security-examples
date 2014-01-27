@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Regex Injection (1)</title>
+	</head>
+	<body>
+		<h1>Regex Injection (1)</h1>
+		<form action="regex.php">
+			<table>
+				<tr><td>Pattern:    </td><td><input type="text" name="pattern"    /></td></tr>
+				<tr><td>Replacement:</td><td><input type="text" name="replacement"/></td></tr>
+				<tr><td>Subject:    </td><td><input type="text" name="subject"    /></td></tr>
+				<tr><td>            </td><td><input type="submit"                 /></td></tr>
+			</table>
+		</form>
+		<h2>How to use</h2>
+		<p>Enter the following parameters to show how the tool should work:</p>
+		<table>
+			<tr><td>Pattern:    </td><td>/rubbish/     </td></tr>
+			<tr><td>Replacement:</td><td>great         </td></tr>
+			<tr><td>Subject:    </td><td>PHP is rubbish</td></tr>
+		</table>
+		<p>Enter the following parameters for the attack:</p>
+		<table>
+			<tr><td>Pattern:    </td><td>/./e                            </td></tr>
+			<tr><td>Replacement:</td><td>file_get_contents("/etc/passwd")</td></tr>
+			<tr><td>Subject:    </td><td>a                               </td></tr>
+		</table>
+	</body>
+</html>
