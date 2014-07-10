@@ -28,6 +28,6 @@ mysql_close();
 ?>
     </p>
     <p><a href="sql.html">Back</a></p>
-    <p><a href="menu.html">Back to menu</a></p>
+    <p><a href="index.html">Back to menu</a></p>
   </body>
 </html>
