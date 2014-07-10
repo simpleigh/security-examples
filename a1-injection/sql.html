@@ -15,21 +15,17 @@
     <h2>How to use</h2>
     <h3>MySQL database setup</h3>
     <pre>
-CREATE DATABASE `security` DEFAULT CHARACTER SET utf8;
+CREATE DATABASE `security`;
 GRANT ALL PRIVILEGES ON `security`.* TO 'security'@'localhost' IDENTIFIED BY 'security';
 USE `security`;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
-    `id`       INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `username` VARCHAR(10)  NOT NULL,
-    `password` VARCHAR(10)  NOT NULL,
+    `id`       INT UNSIGNED,
+    `username` VARCHAR(10),
+    `password` VARCHAR(10),
     PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
-    CHARSET utf8
-    COLLATE utf8_general_ci
-;
+);
 
 INSERT INTO `users` VALUES
     (1, 'user',  'pass' ),
