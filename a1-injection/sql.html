@@ -19,7 +19,6 @@ CREATE DATABASE `security`;
 GRANT ALL PRIVILEGES ON `security`.* TO 'security'@'localhost' IDENTIFIED BY 'security';
 USE `security`;
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
     `id`       INT UNSIGNED,
     `username` VARCHAR(10),
