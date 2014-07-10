@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>SQL Injection</title>
-	</head>
-	<body>
-		<h1>SQL Injection</h1>
-		<form action="sql.php">
-			<table>
-				<tr><td>Username:</td><td><input type="text"     name="username"/></td></tr>
-				<tr><td>Password:</td><td><input type="password" name="password"/></td></tr>
-				<tr><td>&nbsp;</td><td><input type="submit"/></td></tr>
-			</table>
-		</form>
-		<h2>How to use</h2>
-		<h3>MySQL database setup</h3>
-		<pre>
+  <head>
+    <title>SQL Injection</title>
+  </head>
+  <body>
+    <h1>SQL Injection</h1>
+    <form action="sql.php">
+      <table>
+        <tr><td>Username:</td><td><input type="text"     name="username"/></td></tr>
+        <tr><td>Password:</td><td><input type="password" name="password"/></td></tr>
+        <tr><td>&nbsp;</td><td><input type="submit"/></td></tr>
+      </table>
+    </form>
+    <h2>How to use</h2>
+    <h3>MySQL database setup</h3>
+    <pre>
 CREATE DATABASE `security` DEFAULT CHARACTER SET utf8;
 GRANT ALL PRIVILEGES ON `security`.* TO 'security'@'localhost' IDENTIFIED BY 'security';
 USE `security`;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
-  `id`       INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(10)  NOT NULL,
-  `password` VARCHAR(10)  NOT NULL,
-  PRIMARY KEY (`id`)
+    `id`       INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `username` VARCHAR(10)  NOT NULL,
+    `password` VARCHAR(10)  NOT NULL,
+    PRIMARY KEY (`id`)
 )
-	ENGINE InnoDB
-	CHARSET utf8
-	COLLATE utf8_general_ci
+    ENGINE InnoDB
+    CHARSET utf8
+    COLLATE utf8_general_ci
 ;
 
 INSERT INTO `users` VALUES
-	(1, 'user',  'pass' ),
-	(2, 'leigh', 'leigh')
+    (1, 'user',  'pass' ),
+    (2, 'leigh', 'leigh')
 ;
-		</pre>
-		<h3>Hacking in</h3>
-		<p>Enter the following as the username:</p>
-		<pre>' OR TRUE OR username = '</pre>
-	</body>
+    </pre>
+    <h3>Hacking in</h3>
+    <p>Enter the following as the username:</p>
+    <pre>' OR TRUE OR username = '</pre>
+  </body>
 </html>
