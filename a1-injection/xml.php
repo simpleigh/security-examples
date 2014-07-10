@@ -18,5 +18,7 @@ echo $document->saveXML();
 ?>
       </pre>
     </p>
+    <p><a href="xml.html">Back</a></p>
+    <p><a href="index.html">Back to menu</a></p>
   </body>
 </html>
