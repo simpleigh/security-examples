@@ -12,5 +12,6 @@
       </pre>
     </p>
     <p><a href="regex2.html">Back</a></p>
+    <p><a href="menu.html">Back to menu</a></p>
   </body>
 </html>
