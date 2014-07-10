@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Injection</title>
+  </head>
+  <body>
+    <h1>Injection</h1>
+    <h2>How to use</h2>
+    <p>
+      This interface dispatches requests to an interpreter.
+      Enter the number of widgets you'd like the system to make:
+    </p>
+    <p>
+      <input type="text" name="widgets" id="widgets"/>
+      <button name="make" id="make">Make widgets</button>
+    </p>
+    <p>
+      Interpreter response:
+    </p>
+    <p>
+      <textarea
+        name="output"
+        id="output"
+        readonly="readonly"
+        style="font-family: monospace;"
+        rows="10"></textarea>
+    </p>
+    <h3>Hacking in</h3>
+    <p>Enter the following as the number of widgets:</p>
+    <pre>; KILL</pre>
+    <script type="text/javascript">
+function makeWidgets() {
+    var widgets = document.getElementById('widgets'),
+        request = widgets.value,
+        script  = document.createElement('script');
+
+    script.type='text/javascript';
+    script.src='interpreter.php?request=' + encodeURIComponent(request);
+    document.body.appendChild(script);
+}
+
+function displayOutput(output) {
+    document.getElementById('output').innerHTML += output;
+}
+
+document.body.onload = function () {
+    document.getElementById('make').addEventListener('click', makeWidgets);
+};
+    </script>
+  </body>
+</html>
+    
