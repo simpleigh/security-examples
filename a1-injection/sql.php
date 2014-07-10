@@ -26,7 +26,7 @@ if (mysql_num_rows($result) > 0) {
 mysql_free_result($result);
 mysql_close();
 ?>
-			<a href="sqli-login.html">Back</a>
+			<a href="sql.html">Back</a>
 		</p>
 	</body>
 </html>
