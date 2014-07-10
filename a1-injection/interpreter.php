@@ -23,7 +23,6 @@ function interpret($command)
     return $outputLines;
 }
 
-$command = 'MAKE ' . $_GET['request'];
-$resultLines = interpret($command);
+$resultLines = interpret('MAKE ' . $_GET['request']);
 
 echo 'displayOutput("' . join('\n"+"', $resultLines) . '\n");';
